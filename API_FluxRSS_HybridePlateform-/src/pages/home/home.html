@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            News-Home
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+
+        <ion-card-header>
+            Bienvenu dans la NewsApp
+        </ion-card-header>
+
+        <ion-card-content>
+            <!-- Add card content here! -->
+
+        </ion-card-content>
+
+    </ion-card>
+
+    <ion-card>
+
+        <ion-card-header>
+            Connecter Vous
+
+        </ion-card-header>
+
+        <ion-card-content>
+            <!-- Add card content here! -->
+
+            <ion-list>
+
+                <ion-item>
+                    <ion-label floating>Username</ion-label>
+                    <ion-input type="text" [(ngModel)]="name"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Password</ion-label>
+                    <ion-input type="password" [(ngModel)]="mdp"> ></ion-input>
+                </ion-item>
+
+            </ion-list>
+
+            <button id="button_connession" ion-button block (tap)="showArticle()"> Look at Me Now  </button>
+
+        </ion-card-content>
+
+    </ion-card>
+
+
+
+</ion-content>

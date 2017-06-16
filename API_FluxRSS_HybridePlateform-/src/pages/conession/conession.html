@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      WeatherMap-Conession
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id = "panel_allRight" *ngIf = " connexion_name && connexion_mdp" >
+  
+  Votre nom est : {{ connexion_name }} et votre mot de passe est {{ connexion_mdp }}
+
+   </div>
+
+  <div id = "panel_error" *ngIf = " !connexion_name || !connexion_mdp">
+  
+  Données manquantes 
+
+   </div>
+<div *ngIf = "news" >
+
+<ion-card *ngFor = "let article of news.articles">
+  <img [src]="article.urlToImage"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{article.title}}
+      </ion-card-title>
+    <p> {{article.description}} </p>
+  </ion-card-content>
+</ion-card>
+</div>
+
+</ion-content>

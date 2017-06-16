@@ -1,0 +1,55 @@
+
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Gist
+ @williamsViyou
+ Sign out
+ Watch 1
+  Star 1
+  Fork 2 istornz/Ionic2-TheiPhoneRetro-Ep6
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
+Branch: master Find file Copy pathIonic2-TheiPhoneRetro-Ep6/src/services/example.service.ts
+80491cb  24 days ago
+@istornz istornz Initial commit 🎉
+1 contributor
+RawBlameHistory     
+33 lines (24 sloc)  777 Bytes
+/*
+* Un exemple d'implmentation d'un service au sein d'angular
+*/
+
+// Core components
+import { Injectable }   from '@angular/core';
+import { Http }         from '@angular/http';
+
+// RxJS
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
+
+// Models
+// Importez vos models ici
+
+@Injectable()
+export class ExampleService {
+
+    private baseUrl: string = 'https://example.com/api/';
+    private apiKey: string = '<API_KEY>';
+    
+    constructor(private http: Http) { }
+
+    public getObjects(): Promise<any> {
+		const url = `${this.baseUrl}objects?apiKey=${this.apiKey}`;
+        
+        return this.http.get(url)
+        .toPromise()
+        .then(response => response.json())
+        .catch(error => console.log('Une erreur est survenue ' + error))
+    }
+
+}
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
